@@ -64,18 +64,17 @@
                 margin-bottom: 30px;
             }
         </style>
-
     </head>
     <body>
 
 
         <div class="position-ref full-height col-lg-12">
             <div class="flex-center">
-            <img style="" src="img/logo.png" width="200" height="120" alt="logo" title="logo"><br><br>
+                <img style="" src="img/logo.png" width="200" height="120" alt="logo" title="logo"><br><br>
             </div>
             <div class="col-md-12">
                 <br><br><br><br><br>
-                <p class="col-md-12 font-weight-bold" style="position:relative;"> Certificado x validado eletronicamente as {{\Carbon\Carbon::now('America/Maceio')->format('H:i:s')}} do dia {{\Carbon\Carbon::now('America/Maceio')->format('d/m/Y')}}
+                <p class="col-md-12 font-weight-bold" style="position:relative;"> Certificado {{$uid}} validado eletronicamente as {{\Carbon\Carbon::now('America/Maceio')->format('H:i:s')}} do dia {{\Carbon\Carbon::now('America/Maceio')->format('d/m/Y')}}
                 para a empresa x relativo aos descartes abaixo:
                 </p>
             </div>

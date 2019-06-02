@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 
-Route::resource('personagems', 'PersonagemController');
+Route::get('/{uid}', 'validationController@validar')->name('validar');

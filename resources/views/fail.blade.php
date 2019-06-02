@@ -74,30 +74,11 @@
             <img style="" src="img/logo.png" width="200" height="120" alt="logo" title="logo"><br><br>
             </div>
             <div class="col-md-12">
-                <br><br><br><br><br>
-                <p class="col-md-12 font-weight-bold" style="position:relative;"> Certificado x validado eletronicamente as {{\Carbon\Carbon::now('America/Maceio')->format('H:i:s')}} do dia {{\Carbon\Carbon::now('America/Maceio')->format('d/m/Y')}}
-                para a empresa x relativo aos descartes abaixo:
-                </p>
-            </div>
-
-            <div class="col-md-12">
-                <table class="col-md-12" >
-                    <tr  style="border: 1px solid">
-                        <th style="min-width: 100px;">Empresa</th>
-                        <th>Data do descarte</th>
-                        <th>Manifesto</th>
-                        <th>Endereço</th>
-                        <th>Quantidade</th>
-                    </tr>
-                    <tr>
-                        <td>X</td>
-                        <td>20/03/2019</td>
-                        <td>5372</td>
-                        <td>Rua fulano de tal</td>
-                        <td>100m³</td>
-
-                    </tr>
-                </table>
+                <br>
+                <br>
+                <p class="flex-center" style="font-size: xx-large">Infelizmente parece que este certificado não é valido,</p>
+                <p class="flex-center" style="font-size: xx-large">Por favor entre em contato com o setor responsavel.</p>
+                <p class="flex-center" style="font-size: xx-large">Erro:<br> {{ $error }}</p>
             </div>
 
 
