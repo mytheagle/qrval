@@ -12,6 +12,10 @@
         <!-- Styles -->
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+
+
+
+
         <style>
             html, body {
                 background-color: #fff;
@@ -70,32 +74,39 @@
 
         <div class="position-ref full-height col-lg-12">
             <div class="flex-center">
-                <img style="" src="img/logo.png" width="200" height="120" alt="logo" title="logo"><br><br>
+                <img style="" src="/img/logo.png" width="200" height="120" alt="logo" title="logo"><br><br>
             </div>
             <div class="col-md-12">
-                <br><br><br><br><br>
-                <p class="col-md-12 font-weight-bold" style="position:relative;"> Certificado {{$uid}} validado eletronicamente as {{\Carbon\Carbon::now('America/Maceio')->format('H:i:s')}} do dia {{\Carbon\Carbon::now('America/Maceio')->format('d/m/Y')}}
-                para a empresa x relativo aos descartes abaixo:
+                <br>
+                <p class="col-md-12 font-weight-bold" style="position:relative;"> Certificado <span style="color: black;font-family: 'calibri';">{{$certificado->numero}}</span> validado eletronicamente as {{\Carbon\Carbon::now('America/Maceio')->format('H:i:s')}} do dia {{\Carbon\Carbon::now('America/Maceio')->format('d/m/Y')}}
+                para a empresa {{$coletas->items[0]['gerador']['nomeRazaoSocial']}} relativo aos descartes abaixo:
                 </p>
             </div>
 
             <div class="col-md-12">
                 <table class="col-md-12" >
                     <tr  style="border: 1px solid">
-                        <th style="min-width: 100px;">Empresa</th>
+                        <th style="min-width: 100px;">Transportador</th>
                         <th>Data do descarte</th>
                         <th>Manifesto</th>
                         <th>Endereço</th>
                         <th>Quantidade</th>
                     </tr>
-                    <tr>
-                        <td>X</td>
-                        <td>20/03/2019</td>
-                        <td>5372</td>
-                        <td>Rua fulano de tal</td>
-                        <td>100m³</td>
+                    @foreach($coletas->items as $coleta)
+                        @if($coleta != null)
+                    <tr style="border-bottom: 1px solid">
+                        <td>{{$coleta["transportador"]["nomeRazaoSocial"]}}</td>
+                        <td>{{(new \Carbon\Carbon($coleta["dataEmissao"]))->format('d-m-Y')}}</td>
+                        <td>{{$coleta["numeroTransportador"]}}</td>
+                        <td>{{$coleta["obra"]["descricao"]}}</td>
+                        <td>@foreach((object)$coleta["itens"]["items"] as $d)
+                                <p>{{$d["descricao"]}} : {{$d["qtde"]}}m³</p>
+                            @endforeach
+                        </td>
 
                     </tr>
+                        @endif
+                    @endforeach
                 </table>
             </div>
 

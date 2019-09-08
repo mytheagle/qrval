@@ -70,15 +70,16 @@
 
 
         <div class="position-ref full-height col-lg-12">
-            <div class="flex-center">
-            <img style="" src="img/logo.png" width="200" height="120" alt="logo" title="logo"><br><br>
-            </div>
+
             <div class="col-md-12">
+                <div class="d-flex justify-content-center col-12">
+                    <img src="/img/logo.png"  width="30%" id="img" style="transition-duration: 5500ms ;" class=""><br>
+                </div>
                 <br>
                 <br>
-                <p class="flex-center" style="font-size: xx-large">Infelizmente parece que este certificado não é valido,</p>
-                <p class="flex-center" style="font-size: xx-large">Por favor entre em contato com o setor responsavel.</p>
-                <p class="flex-center" style="font-size: xx-large">Erro:<br> 404</p>
+                <p class="flex-center" style="font-size: xx-large">Infelizmente parece que nossos servidores estão desligados</p>
+                <p class="flex-center" style="font-size: xx-large">Nosso horario de funcionamento é das 08:00 às 18:00 de Segundas a Sexta, exceto aos feriados.</p>
+
             </div>
 
 

@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Alianca Empreendimentos</title>
+        <script
+                src="https://code.jquery.com/jquery-3.4.1.slim.js"
+                integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+                crossorigin="anonymous"></script>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -12,97 +16,63 @@
         <!-- Styles -->
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
+            .p1 {
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 0.5s linear;
             }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            .p2 {
+                visibility: visible;
+                opacity: 1;
             }
         </style>
 
+
     </head>
-    <body>
+    <body style="background-color: white" class="d-flex justify-content-center container">
+    <div class="d-flex justify-content-center col-12">
+    <img src="/img/logo.png"  width="90%" id="img" style="transition-duration: 5500ms ;" class=""><br>
+    </div>
+    <div style="position: absolute;
+    align-content: space-around;
+    top: 200px;}">
+        <br><br><br><br><br>
+        <p id="end" class="p1 font-weight-bold" >Endereço:<span class="font-weight-normal"> R. Des. Almeida Guimarães, 1 - Pajuçara, Maceió - AL, 57030-160 - Delman Empresarial, Sala 806</span> </p>
+
+        <p id="num" class="p1 font-weight-bold" >Telefone:<span class="font-weight-normal"> (82) 3021-0339</span></p>
 
 
-        <div class="position-ref full-height col-lg-12">
-            <div class="flex-center">
-            <img style="" src="img/logo.png" width="200" height="120" alt="logo" title="logo"><br><br>
-            </div>
-            <div class="col-md-12">
-                <br><br><br><br><br>
-                <p class="col-md-12 font-weight-bold" style="position:relative;"> Certificado x validado eletronicamente as {{\Carbon\Carbon::now('America/Maceio')->format('H:i:s')}} do dia {{\Carbon\Carbon::now('America/Maceio')->format('d/m/Y')}}
-                para a empresa x relativo aos descartes abaixo:
-                </p>
-            </div>
+    </div>
 
-            <div class="col-md-12">
-                <table class="col-md-12" >
-                    <tr  style="border: 1px solid">
-                        <th style="min-width: 100px;">Empresa</th>
-                        <th>Data do descarte</th>
-                        <th>Manifesto</th>
-                        <th>Endereço</th>
-                        <th>Quantidade</th>
-                    </tr>
-                    <tr>
-                        <td>X</td>
-                        <td>20/03/2019</td>
-                        <td>5372</td>
-                        <td>Rua fulano de tal</td>
-                        <td>100m³</td>
-
-                    </tr>
-                </table>
-            </div>
-
-
-
-
-        </div>
     </body>
+
+    <script>
+        $(window).ready(function() {
+
+            $("#img").width(500);
+            setTimeout(end, 3000);
+            setTimeout(num, 4000);
+
+
+
+
+
+
+
+        });
+
+        function end() {
+            $("#end").addClass('p2')
+        }
+
+
+        function num() {
+            $("#num").addClass('p2')
+        }
+
+
+    </script>
 </html>
