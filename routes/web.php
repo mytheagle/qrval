@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+;
 
 
 Route::get('/certificado/{uid}', 'validationController@validar')->name('validar');
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
