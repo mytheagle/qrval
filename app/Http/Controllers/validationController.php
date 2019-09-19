@@ -15,6 +15,12 @@ class validationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function index()
+    {
+        return view('welcome');
+    }
+
     public function validar($uid)
     {
         $json = json_decode( $this->my_file_get_contents('http://191.184.33.179:50001/api/syclus/sistema/certificado/'.$uid),true);
@@ -33,6 +39,8 @@ class validationController extends Controller
         };
 
         $json = (object) $json;
+
+
         $coletas = (object)$json->coletas;
 
             return view('validar')->with([

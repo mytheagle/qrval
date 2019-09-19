@@ -16,6 +16,8 @@
 
 Route::get('/certificado/{uid}', 'validationController@validar')->name('validar');
 
+Route::get('/', 'validationController@index')->name('index');
+
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/dashbord/', 'DashbordController@index')->name('dashbord');

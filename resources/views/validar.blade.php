@@ -4,7 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>QRcode Alianca</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148095722-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-148095722-1');
+        </script>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -99,9 +107,8 @@
                         <td>{{(new \Carbon\Carbon($coleta["dataEmissao"]))->format('d-m-Y')}}</td>
                         <td>{{$coleta["numeroTransportador"]}}</td>
                         <td>{{$coleta["obra"]["descricao"]}}</td>
-                        <td>@foreach((object)$coleta["itens"]["items"] as $d)
-                                <p>{{$d["descricao"]}} : {{$d["qtde"]}}m³</p>
-                            @endforeach
+                        <td>
+                                <p>{{$coleta["itens"]["items"][0]["qtde"]+$coleta["itens"]["items"][1]["qtde"]}}m³</p>
                         </td>
 
                     </tr>
