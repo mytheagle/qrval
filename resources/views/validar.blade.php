@@ -100,6 +100,7 @@
                         <th>Endereço</th>
                         <th>Quantidade</th>
                     </tr>
+
                     @foreach($coletas->items as $coleta)
                         @if($coleta != null)
                     <tr style="border-bottom: 1px solid">
@@ -108,7 +109,9 @@
                         <td>{{$coleta["numeroTransportador"]}}</td>
                         <td>{{$coleta["obra"]["descricao"]}}</td>
                         <td>
-                                <p>{{$coleta["itens"]["items"][0]["qtde"]+$coleta["itens"]["items"][1]["qtde"]}}m³</p>
+                            @if( isset($coleta["itens"]["items"][0]["qtde"]))
+                            <p>{{$coleta["itens"]["items"][0]["qtde"]+$coleta["itens"]["items"][1]["qtde"]}}m³</p>
+                            @endif
                         </td>
 
                     </tr>
