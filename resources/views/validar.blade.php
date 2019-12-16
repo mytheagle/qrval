@@ -111,6 +111,8 @@
                         <td>
                             @if( isset($coleta["itens"]["items"][0]["qtde"]))
                             <p>{{$coleta["itens"]["items"][0]["qtde"]+$coleta["itens"]["items"][1]["qtde"]}}m³</p>
+                            @else
+                            <p>100% Entulho</p>
                             @endif
                         </td>
 
