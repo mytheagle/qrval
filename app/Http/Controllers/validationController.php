@@ -23,7 +23,7 @@ class validationController extends Controller
 
     public function validar($uid)
     {
-        $json = json_decode( $this->my_file_get_contents('http://191.184.33.179:50001/api/syclus/sistema/certificado/'.$uid),true);
+        $json = json_decode( $this->my_file_get_contents('http://179.235.157.137:50001/api/syclus/sistema/certificado/'.$uid),true);
 
         if($json == null) {
 
